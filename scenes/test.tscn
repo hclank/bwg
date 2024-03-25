@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://5gqsv3m2d6wb"]
+
+[ext_resource type="PackedScene" uid="uid://csm5ltprmbwit" path="res://scenes/chars/chicken.tscn" id="1_3hqyr"]
+[ext_resource type="Texture2D" uid="uid://dxlo2ft7012qo" path="res://icon.svg" id="2_oolts"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1j4j"]
+size = Vector2(127.5, 10)
+
+[node name="test" type="Node2D"]
+position = Vector2(104, 36)
+
+[node name="chicken" parent="." instance=ExtResource("1_3hqyr")]
+
+[node name="ground" type="StaticBody2D" parent="."]
+position = Vector2(4, 58)
+
+[node name="Icon" type="Sprite2D" parent="ground"]
+position = Vector2(0, -3.8147e-06)
+scale = Vector2(1, 0.0859374)
+texture = ExtResource("2_oolts")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground"]
+shape = SubResource("RectangleShape2D_a1j4j")
